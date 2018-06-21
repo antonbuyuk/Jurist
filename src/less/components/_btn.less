@@ -1,5 +1,109 @@
 .btn {
-	&:active {}
-	&:hover {}
-	&:focus {}
+	position: relative;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0;
+	cursor: pointer;
+	text-transform: uppercase;
+	z-index: 1;
+
+	&.disabled{
+		background-color: #d1d1d1;
+		pointer-events: none;
+		
+		&::before,
+		&::after{
+			background-color: #d1d1d1;
+		}
+	}
+
+	&:before{
+		content: '';
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		right: 0;
+		bottom: 0;
+		z-index: 0;
+	}
+
+	&:after{
+		content: '';
+		position: absolute;
+		left: 1px;
+		top: 1px;
+		right: 1px;
+		bottom: 1px;
+		z-index: 1;
+		border: 4px solid @white;
+	}
+
+	span{
+		z-index: 2;
+	}
+
+	&_size{
+
+		&-medium{
+			font-size: 0.875rem;
+			font-weight: 300;
+			padding: 1.125rem 1.875rem;
+		}
+	}
+
+	&_color{
+
+		&-yellow{
+			background-color: @main;
+			color: @white;
+
+			&:before{
+				background-color: @main;
+			}
+
+			&:after{
+				background-color: @main;
+			}
+
+			&:hover {
+				background-color: @main--hover;
+				color: @white;
+
+				&:before{
+					background-color: @main--hover;
+				}
+	
+				&:after{
+					background-color: @main--hover;
+				}
+			}
+
+			&:active {
+				background-color: @main--hover;
+				color: @white;
+
+				&:before{
+					background-color: @main--hover;
+				}
+	
+				&:after{
+					background-color: @main--hover;
+				}
+			}
+
+			&:focus {
+				background-color: @main--hover;
+				color: @white;
+
+				&:before{
+					background-color: @main--hover;
+				}
+	
+				&:after{
+					background-color: @main--hover;
+				}
+			}
+		}
+	}
 }

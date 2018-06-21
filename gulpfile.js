@@ -29,18 +29,18 @@ var path = {
 	src: {
 		pug: 'src/pug/**/[^_]*.pug',
 		css: 'src/less/styles.less',
-		js: 'src/js/*',
+		js: 'src/js/app.js',
 		image: 'src/img/**/*',
 		fonts: 'src/fonts/**/*',
 		json: 'src/json/*',
 		htaccess: 'src/.htaccess'
 	},
 	watch: {
-		pug: 'src/includes/*',
-		css: 'src/assets/less/*',
-		js: 'src/assets/js/*',
-		image: 'src/assets/img/*/*',
-		fonts: 'src/assets/fonts/*/*',
+		pug: 'src/pug/**/*',
+		css: 'src/less/**/*',
+		js: 'src/js/**/*',
+		image: 'src/img/**/*',
+		fonts: 'src/fonts/**/*',
 		htaccess: 'src/.htaccess',
 	},
 	clean: './build',
@@ -63,7 +63,8 @@ gulp.task('pug:build', function() {
 
 gulp.task('css:build', function(){
   return gulp.src([
-	(path.src.css)
+        ('src/less/vendor/foundation/foundation.css'),
+	    (path.src.css)
 	])
     .pipe(less())
     .pipe(autoprefixer({
@@ -77,6 +78,8 @@ gulp.task('css:build', function(){
 
 gulp.task('js:build', function(){
   return gulp.src([
+    ('src/js/vendor/jquery.js'),
+    ('src/js/vendor/foundation.js'),
 	(path.src.js),
 	])
     .pipe(concat('app.min.js'))
