@@ -1,0 +1,33 @@
+.carousel{
+
+    &_contacts{
+
+        .owl-dots{
+            display: flex;
+
+            .owl-dot{
+                position: relative;
+                display: flex;
+                margin-right: 0.625rem;
+
+                &:last-child{
+                    margin-right: 0;
+                }
+
+                span{
+                    display: flex;
+                    width: 0.625rem;
+                    height: 0.625rem;
+                    background-color: #9d9d9d;
+                }
+
+                &.active{
+
+                    span{
+                        background-color: @main;
+                    }
+                }
+            }
+        }
+    }
+}

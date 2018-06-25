@@ -64,6 +64,8 @@ gulp.task('pug:build', function() {
 gulp.task('css:build', function(){
   return gulp.src([
         ('src/less/vendor/foundation/foundation.css'),
+        ('src/less/vendor/owl-carousel/owl.carousel.css'),
+        ('src/less/vendor/owl-carousel/owl.theme.default.css'),
 	    (path.src.css)
 	])
     .pipe(less())
@@ -80,6 +82,7 @@ gulp.task('js:build', function(){
   return gulp.src([
     ('src/js/vendor/jquery.js'),
     ('src/js/vendor/foundation.js'),
+    ('src/js/vendor/owl.carousel.js'),
 	(path.src.js),
 	])
     .pipe(concat('app.min.js'))

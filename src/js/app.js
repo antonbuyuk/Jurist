@@ -1,7 +1,7 @@
 $(document).foundation();
 
 $(document).ready(function() {
-        var wrapper = $( ".form_item-upload" ),
+    var wrapper = $( ".form_item-upload" ),
         inp = wrapper.find( "input" ),
         btn = wrapper.find( "button" ),
         lbl = wrapper.find( "div" );
@@ -33,3 +33,20 @@ $(document).ready(function() {
             lbl.text( file_name );
     }).change();
 });
+
+// Carousel
+$(document).ready(function() {
+    if($('.carousel_contacts').length){
+        $('.owl-carousel').owlCarousel({
+            loop:true,
+            margin:00,
+            nav:false,
+            items:1,
+            autoplay:true,
+            autoplayTimeout:4000,
+            autoplayHoverPause:true
+        })
+    }
+
+});
+

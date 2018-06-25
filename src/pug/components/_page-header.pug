@@ -1,1 +1,106 @@
-header.header
+header.header.header-transparent.header-absolute.header-fixed
+    .row.row-large.align-middle
+        .columns.small-6.medium-6.large-2
+            .logo.logo-white.header_logo
+                a(href="/")
+                    img(src="./templates/_ares/img/logo/logo-inverse.svg", alt="")
+        .columns.hidden-small.hidden-medium.large-7
+            - var menuServices = ['Экономические споры', 'Третейский суд', 'Медиация'];
+
+            ul.menu.menu-white.align-middle.header_menu.menu_dropdown.dropdown(data-dropdown-menu, data-closing-time='0',data-alignment='right')
+                mixin menuItem(href,text)
+                    li.menu_item
+                        a(href=href)=text
+ 
+                mixin menuDropdownItem(href,text)
+                    li.menu_item.dropdown_item
+                        a(href=href)=text
+
+                mixin menuDropdown(href,text)
+                    li.menu_item(data-alignment='right')
+                        a(href=href)=text
+                        ul.menu.dropdown_area
+                            each item in menuServices
+                                +menuDropdownItem('#',item) 
+
+                +menuDropdown('#','о нас')
+                +menuDropdown('#','услуги')
+                +menuItem('#','новости')
+                +menuDropdown('#','полезная информация')
+                +menuItem('#','контакты')
+                li.menu_btn
+                        a(href='#')
+                            i.i-agreement
+                            | иск за 10 минут
+        .columns.small-6.medium-6.large-3.flex.align-middle.align-right
+            ul.search.header_search.dropdown.hidden-small(data-dropdown-menu, data-closing-time='0', data-autoclose='false',data-close-on-click-inside='false')
+                li.menu_item
+                    a(href='#')
+                        i.i-search
+                    ul.menu.dropdown_area
+                        li.dropdown_item
+                            .form_item
+                                input(type="search",placeholder="Поиск по статьям...")
+            .contacts.header_contacts
+                a.contacts_phone(href='tel:+375 (152) 967-004') +375 (152) 967-004
+                a.contacts_callback.hidden-small(href='#')
+                    i.i-icon
+                    span Заказать звонок
+            ul.language.header_language.hidden-small.dropdown(data-dropdown-menu, data-closing-time='0', data-autoclose='false',data-alignment='right')
+                li.menu_item
+                    a.align-middle(href='#')
+                        span.language-select En
+                        span.arrow-down
+                    ul.menu.dropdown_area
+                        li.dropdown_item
+                            a(href="#") Ru
+                        li.dropdown_item
+                            a(href="#") Be
+                        li.dropdown_item
+                            a(href="#") En
+                        li.dropdown_item
+                            a(href="#") Pl
+                        li.dropdown_item
+                            a(href="#") Lt
+    .header_mobile.hidden-large          
+        .row.align-middle
+            .columns.small-6
+                ul.dropdown(data-dropdown-menu, data-closing-time='0', data-autoclose='false',data-alignment='right')
+                    li.menu_item
+                        a.burger(href='#')
+                            i.i-menu
+                        ul.menu.dropdown_area
+                            +menuItem('#','о нас')
+                            +menuItem('#','услуги')
+                            +menuItem('#','новости')
+                            +menuItem('#','полезная информация')
+                            +menuItem('#','контакты')
+                            li.menu_btn
+                                    a(href='#')
+                                        i.i-agreement
+                                        | иск за 10 минут
+            .columns.small-6.medium-6.large-3.flex.align-middle.align-right
+                ul.search.header_search.dropdown.hidden-medium(data-dropdown-menu, data-closing-time='0', data-autoclose='false',data-close-on-click-inside='false',data-alignment='left')
+                    li.menu_item
+                        a(href='#')
+                            i.i-search
+                        ul.menu.dropdown_area
+                            li.dropdown_item
+                                .form_item
+                                    input(type="search",placeholder="Поиск по статьям...")
+                ul.language.header_language.hidden-medium.dropdown(data-dropdown-menu, data-closing-time='0', data-autoclose='false',data-alignment='left')
+                    li.menu_item
+                        a.align-middle(href='#')
+                            span.language-select En
+                            span.arrow-down
+                        ul.menu.dropdown_area
+                            li.dropdown_item
+                                a(href="#") Ru
+                            li.dropdown_item
+                                a(href="#") Be
+                            li.dropdown_item
+                                a(href="#") En
+                            li.dropdown_item
+                                a(href="#") Pl
+                            li.dropdown_item
+                                a(href="#") Lt

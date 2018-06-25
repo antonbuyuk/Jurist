@@ -1,0 +1,29 @@
+.social{
+    display: flex;
+    align-items: center;
+
+    &_item{
+        position: relative;
+        border: 1px solid #999;
+        border-radius: 50%;
+        width: 2.625rem;
+        height: 2.625rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #999;
+        font-size: 2rem;
+        margin-right: 1.25rem;
+        
+
+        &:last-child{
+            margin-right: 0;
+        }
+
+        &:hover,
+        &:focus{
+            color: @main--hover;
+            border-color: @main--hover;
+        }
+    }
+}

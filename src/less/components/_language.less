@@ -1,0 +1,41 @@
+.language{
+    font-family: @font-family--serif;
+
+    .menu_item{
+
+        > a{
+            color: #fff;
+            padding: 2.344rem 0;
+
+            @media (max-width: 63.975em){
+                padding: 1.75rem 0;
+            }
+
+            @media (max-width: 39.975em){
+                font-size: 0.625rem;
+                padding: .75rem 0 !important;
+            }
+        }
+    }
+
+    .dropdown_area{
+        min-width: auto;
+        font-family: @font-family;
+    }
+
+    &-select{
+        border-radius: 50%;
+        border: 1px solid #fff;
+        width: 2.5rem;
+        height: 2.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 0.625rem;
+
+        @media (max-width: 39.975em){
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+}

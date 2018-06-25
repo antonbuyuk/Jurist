@@ -10,6 +10,23 @@ html {
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	font-size: @base-font-size;
 	height: 100%;
+
+	@media (min-width: 83em) and (max-width: 90.975em){
+		font-size: 90%;
+	}
+
+	@media (min-width: 75em) and (max-width: 82.975em){
+		font-size: 80%;
+	}
+
+	@media (min-width: 64em) and (max-width: 74.975em){
+		font-size: 73.9%;
+	}
+
+	@media (min-width: 40em) and (max-width: 41.975em){
+		font-size: 90%;
+	}
+
 }
 
 body {
@@ -20,6 +37,8 @@ body {
 	color: @text-color;
 	line-height: @line-height;
 	height: 100%;
+	display: flex;
+    flex-direction: column;
 }
 
 a {
@@ -80,5 +99,129 @@ h5,
 p {
 	line-height: 1.25rem;
 	margin-bottom: 1.25rem;
+	margin-top: 0;
 	color: #666;
+}
+
+.copirate{
+	color: #999;
+	font-size: 0.625rem;
+	font-weight: 300;
+}
+
+.hidden{
+
+	&-small{
+		@media (max-width: 39.975em){
+			display: none !important;
+		}
+	}
+
+	&-medium{
+		@media (min-width: 40em) and (max-width: 63.975em){
+			display: none !important;
+		}
+	}
+
+	&-large{
+
+		@media (min-width: 64em){
+			display: none !important;
+		}
+	}
+}
+
+.hr{
+	position: relative;
+	margin: 1.875rem auto;
+	width: 100%;
+
+	&-mini{
+		max-width: 3.75rem;
+	}
+
+	&-gold{
+		border-color: @main;
+	}
+}
+
+.text{
+
+	&-center{
+		text-align: center;
+	}
+}
+
+.row{
+
+	&-large{
+		max-width: none;
+		
+		@media (min-width: 75em){
+			padding: 0 3.75rem;
+		}
+	}
+}
+
+.flex{
+	display: flex;
+
+	&-row{
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	&-column{
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.arrow{
+
+	&-down{
+		width: 0;
+		height: 0;
+		border-left: 0.35rem solid transparent;
+		border-right: 0.35rem solid transparent;
+		border-top: 0.3rem solid #fff;
+	}
+}
+
+.contacts{
+
+	&_phone{
+		display: flex;
+		width: 100%;
+		color: #fff;
+		font-weight: 600;
+		font-size: 1rem;
+		margin-bottom: 0.25rem;
+
+		@media (max-width: 39.975em){
+			font-size: 0.875rem;
+		}
+	}
+	
+	&_callback{
+		display: flex;
+		width: 100%;
+		color: #fff;
+		font-weight: 300;
+		margin-top: 0.25rem;
+
+		&:hover{
+			color: @main--hover;
+
+			span{
+				border-bottom-color: @main--hover;
+			}
+		}
+		
+		span{
+			border-bottom: 1px dashed #fff;
+			margin-left: 0.5rem;
+		}
+	}
 }

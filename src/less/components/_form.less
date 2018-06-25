@@ -176,7 +176,7 @@
             border: 1px solid #dcdcdc;
             font-size: 0.75rem;
             font-style: italic;
-            font-family: 'Open Sans',sans-serif;
+            font-family: @font-family;
             width: 100%;
 
             &::placeholder{
@@ -194,13 +194,16 @@
         }
         
         textarea{
+            width: 100%;
+            max-width: 100%;
             border-radius: 0;
             display: block;
             padding: .782rem .875rem;
             border: 1px solid #dcdcdc;
             font-size: 0.75rem;
             font-style: italic;
-            font-family: 'Open Sans',sans-serif;
+            font-family: @font-family;
+            min-height: 6.25rem;
 
             &::placeholder{
                 color: #999;
@@ -222,5 +225,12 @@
         i{
             color: @error;
         }
+    }
+
+    &_area{
+        position: relative;
+        width: 100%;
+        background-image: url(../img/png/form_patern.png);
+        padding: 3.875rem 4rem;
     }
 }
