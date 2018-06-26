@@ -131,6 +131,16 @@ p {
 	}
 }
 
+.column{
+
+	&-small{
+		
+		@media (max-width:39.975em){
+			flex-direction: column;
+		}
+	}
+}
+
 .hr{
 	position: relative;
 	margin: 1.875rem auto;
@@ -149,6 +159,10 @@ p {
 
 	&-center{
 		text-align: center;
+	}
+
+	&-right{
+		text-align: right;
 	}
 }
 
