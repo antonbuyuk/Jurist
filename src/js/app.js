@@ -37,7 +37,7 @@ $(document).ready(function() {
 // Carousel
 $(document).ready(function() {
     if($('.carousel_contacts').length){
-        $('.owl-carousel').owlCarousel({
+        $('.carousel_contacts').owlCarousel({
             loop:true,
             margin:00,
             nav:false,
@@ -45,6 +45,38 @@ $(document).ready(function() {
             autoplay:true,
             autoplayTimeout:4000,
             autoplayHoverPause:true
+        })
+    }
+
+    if($('.carousel_main').length){
+        $('.carousel_main').owlCarousel({
+            loop:true,
+            margin:0,
+            nav:false,
+            items:1,
+            dots: false,
+            autoplay:true,
+            autoplayTimeout:4000,
+            autoplayHoverPause:true
+        })
+    }
+
+    if($('.carousel_reviews').length){
+        $('.carousel_reviews').owlCarousel({
+            loop:true,
+            margin:0,
+            nav:true,
+            navText: ['<i class="i-left-chevron"></i>','<i class="i-right-chevron"></i>'],
+            items:1,
+            dots: true,
+            responsive:{
+                0:{
+                    nav:false,
+                },
+                640:{
+                    nav:true,
+                }
+            }
         })
     }
 

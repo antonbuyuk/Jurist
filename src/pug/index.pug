@@ -1,7 +1,126 @@
 extends templates/_layout
 
 block vars
-	- var page = "index";
+	- var page = "main_page";
 	- var title = "index";
 
 block content
+	section.main.carousel_section
+		.carousel_main.owl-carousel.owl-theme
+			.main_item.background_image.background-cover.background-100(style='background-image: url(./templates/_ares/img/jpg/main-1.jpg)')
+			.main_item.background_image.background-cover.background-100(style='background-image: url(./templates/_ares/img/jpg/main-2.jpg)')
+			.main_item.background_image.background-cover.background-100(style='background-image: url(./templates/_ares/img/jpg/main-3.jpg)')
+		.main_block
+			.row
+				.column.small-12.large-10.large-offset-1
+					.title.title_main.title_size-extraLarge.title_color-main.text-center
+						| Решение бизнес-споров в экономическом суде, третейском суде, в рамках медиации
+					hr.hr.hr-gold.hr-large
+				.column.small-12.medium-10.medium-offset-1.large-8.large-offset-2
+					.text.text-center.text-white
+						p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+	div.wrapper
+		section.main_eggs.section
+			.row
+				mixin box(img,title,text)
+					.columns.small-12.large-4
+						.box.flex.align-middle.text-center.shadow-light
+							.box_img
+								img(src=img, alt=title)
+							div.box_section
+								.title.title_size-medium.title_color-dark=title
+								hr.hr.hr-gold.hr-mini(noshade)
+								p=text
+				+box('./templates/_ares/img/svg/recovery.svg','Экономические споры','Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Incidunt ut labore et dolore magnam aliquam quaerat voluptatem.')
+				+box('./templates/_ares/img/svg/arbitration.svg','Третейский суд','Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Incidunt ut labore et dolore magnam aliquam quaerat voluptatem.')
+				+box('./templates/_ares/img/svg/mediation.svg','Медиация','Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Incidunt ut labore et dolore magnam aliquam quaerat voluptatem.')
+		section.main_about.section
+			.row
+				.columns.small-12
+					.title.title_size-section.title_main.title_color-dark.text-center О нас
+					hr.hr.hr-gold.hr-medium(noshade)
+			.row
+				.columns.small-12.medium-5.large-4
+					.flex.flex-column.align-center
+						.image-border
+							img(src="../templates/_ares/img/jpg/belyasov.jpg", alt="")
+						.sign
+							| Белявский Сергей Чеславович
+						.sign-post 
+							| Руководитель компании
+				.columns.small-12.medium-7.large-8
+					div.egg-list
+						p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						.flex.flex-column
+							mixin egg(img,text)
+								.egg-item.flex.align-middle
+									.egg-img
+										img(src=img, alt="")
+									p=text
+							+egg('./templates/_ares/img/svg/courthouse.svg','19 лет опыта судебной работы в экономическом (хозяйственном) суде, 2 квалификационный класс судьи.')
+							+egg('./templates/_ares/img/svg/libra2.svg','более 9000 рассмотренных судебных дел.')
+							+egg('./templates/_ares/img/svg/award.svg','Лауреат конкурса «Лучший судья хозяйственных судов РБ» в 2013 году.')
+							+egg('./templates/_ares/img/svg/books.svg','Автор более 600 аналитических статей, книг хозяйственно-правовой тематики .')
+							+egg('./templates/_ares/img/svg/law-book.svg','Научно-исследовательская и законотворческая работа в сфере хозяйственного законодательства.')
+		section.main_reviews.section
+			.row.expanded
+				.small-12.large-6
+					.row(style='height: 100%;')
+						mixin reviewsImg(img)
+							.small-6.medium-4
+								span.background_square.background_image(style='background-image: url(' + img +')')
+						+reviewsImg('./templates/_ares/img/jpg/rev-1.jpg')
+						+reviewsImg('./templates/_ares/img/jpg/rev-2.jpg')
+						+reviewsImg('./templates/_ares/img/jpg/rev-3.jpg')
+						+reviewsImg('./templates/_ares/img/jpg/rev-4.jpg')
+						+reviewsImg('./templates/_ares/img/jpg/rev-5.jpg')
+						+reviewsImg('./templates/_ares/img/jpg/rev-6.jpg')
+				.small-12.large-6
+					.main_reviews_area.patern
+						.title.title_size-section.title_main.title_color-dark Отзывы
+						hr.hr.hr-gold.hr-medium(noshade)
+						.carousel_reviews.owl-carousel.owl-theme
+							mixin revItem
+								.carousel_reviews_item
+									p Уважаемый Сергей Чеславович!
+									p На протяжении более 10 лет Вы оказываете нам честь как автор и лектор. Благодарим Вас за многолетний труд и сотрудничество с компанией “ЮрСпектр”, за компетентность, самотдачу в работе и внимательное отношение к коллегам!
+									p Пусть Ваш профессионализм продолжает помогать ещё большему количеству специалистов страны. Примите самые искренние пожелания здоровья, блогополучия, дальнейших успехов в нашей совместной деятельности.
+									.flex
+										img.name_img(src="./templates/_ares/img/jpg/slomenec.jpg", alt="")
+										.flex.flex-column.align-center
+											.name Сломенец О.В.
+											.name_post Генеральный директор
+							+revItem
+							+revItem
+		section.main_news.section
+			.row.expanded.hidden-small.hidden-medium
+				.small-12.large-6
+					.background_img.background_img-clock
+				.small-12.large-6
+					.background_image.background-cover(style='background-image: url(./templates/_ares/img/jpg/practic-bg.jpg')
+			.absolute-large
+				.row
+					.small-12.large-6
+						.main_news_area
+							.title.title_size-section.title_main.title_color-dark Новости
+							hr.hr.hr-gold.hr-medium(noshade)
+							div
+								.main_news_item
+									a.news_title(href="#") 	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore. 
+									.news_text
+										p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+									.news_date 05.04.18
+								.main_news_item
+									a.news_title(href="#") 	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore. 
+									.news_text
+										p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+									.news_date 05.04.18
+					.small-12.large-6
+						.main_news_area.background_image.background-cover(style='background-image: url(./templates/_ares/img/jpg/practic-bg.jpg')
+							.title.title_size-section.title_main.title_color-white Наша практика
+							hr.hr.hr-gold.hr-medium(noshade)
+							.text.text-white
+								p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+							a.btn.btn_border.btn_color-yellow.btn_size-medium 
+								span Перейти к публикациям
+

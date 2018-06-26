@@ -9,7 +9,7 @@
   font-style: normal;
 }
 
-[class^="i-"], [class*=" i-"] {
+i {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -24,6 +24,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.i-left-arrow:before {
+  content: "\e91f";
+}
+.i-left-chevron:before {
+  content: "\e920";
+}
 .i-add:before {
   content: "\e900";
 }

@@ -5,10 +5,10 @@ html(lang="ru")
 
 	include _head
 
-	body
+	body(id=page)
 		include ../components/_page-header
 
-		main.main(id='#{page}')
+		main
 			block content
 			
 		include ../components/_page-footer
