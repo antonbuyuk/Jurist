@@ -80,5 +80,90 @@ $(document).ready(function() {
         })
     }
 
+    if($('.carousel_awards').length){
+        $('.carousel_awards').owlCarousel({
+            loop:false,
+            navText: ['<i class="i-left-chevron"></i>','<i class="i-right-chevron"></i>'],
+            dots: true,
+            responsive:{
+                0:{
+                    nav:false,
+                    items:1,
+                    margin:0
+                },
+                640:{
+                    nav:false,
+                    items:3,
+                    margin:15
+                },
+                1024:{
+                    items:5,
+                    nav:true,
+                    margin:30
+                }
+            }
+        })
+    }
 });
 
+
+if ($('#map').length > 0) {
+    function initMap() {
+        var lt = + $('#map').attr('data-lt');
+            lg = + $('#map').attr('data-lg');
+            gps = {lat: lt, lng: lg};
+            text = $('#map').attr('data-text');
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 12,
+          styles: [
+            {elementType: 'geometry', stylers: [{color: '#efefef'}]},
+            {elementType: 'labels.text.stroke', stylers: [{color: '#fff'}]},
+            {elementType: 'labels.text.fill', stylers: [{color: '#767676'}]},
+            {
+              featureType: 'road',
+              elementType: 'geometry',
+              stylers: [{color: '#bababa'}]
+            },
+            {
+              featureType: 'road',
+              elementType: 'geometry.stroke',
+              stylers: [{color: '#bababa'}]
+            },
+            {
+              featureType: 'road',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#003a57'}]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'geometry',
+              stylers: [{color: '#bababa'}]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'geometry.stroke',
+              stylers: [{color: '#fff'}]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'geometry',
+              stylers: [{color: '#bababa'}]
+            },
+            {
+              featureType: 'water',
+              elementType: 'geometry',
+              stylers: [{color: '#dadada'}]
+            }
+          ]
+        });
+
+        var marker = new google.maps.Marker({
+            position: {lat: -34.397, lng: 150.644},
+            icon: './templates/_ares/img/svg/placeholder.svg',
+            map: map,
+            title: 'tex'
+        });
+    }
+};

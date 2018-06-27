@@ -1,0 +1,9 @@
+section.gallery.section
+    .row
+        .columns.small-12
+            .title.title_size-large.title_color-dark.title_main.text-center Фотогалерея
+            hr.hr.hr-gold.hr-medium(noshade)
+    .row
+        each item in galleryItems
+            .small-6.medium-4.large-3
+                span.gallery_image.background_image(style='background-image: url('+ item +')')

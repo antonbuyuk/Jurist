@@ -1,0 +1,47 @@
+extends templates/_layout
+
+block vars
+    - var page = "about_page";
+    - var title = "О нас";
+
+block content
+    section.main
+        .main_item.background_image.background-cover.background-50(style='background-image: url(./templates/_ares/img/jpg/about.jpg)')
+        .main_block
+            .row
+                .column.small-12.large-10.large-offset-1
+                    .title.title_main.title_size-section.title_color-white.text-center
+                        | О нас
+                    hr.hr.hr-gold.hr-large(noshade)
+    div.wrapper.wrapper_menu
+        - var wrapperTabs = ['О нас', 'Карьера', 'Социальная ответственность', 'Отзывы'];
+        include ./components/_tabs
+        section.about.main_about.section
+            .row
+                .columns.small-12.medium-5.large-4
+                    .flex.flex-column.align-center
+                        .image-border
+                            img(src="../templates/_ares/img/jpg/belyasov.jpg", alt="")
+                        .sign
+                            | Белявский Сергей Чеславович
+                        .sign-post 
+                            | Руководитель компании
+                .columns.small-12.medium-7.large-8
+                    div.egg-list
+                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        .flex.flex-column
+                            mixin egg(img,text)
+                                .egg-item.flex.align-middle
+                                    .egg-img
+                                        img(src=img, alt="")
+                                    p=text
+                            +egg('./templates/_ares/img/svg/courthouse.svg','19 лет опыта судебной работы в экономическом (хозяйственном) суде, 2 квалификационный класс судьи.')
+                            +egg('./templates/_ares/img/svg/libra2.svg','более 9000 рассмотренных судебных дел.')
+                            +egg('./templates/_ares/img/svg/award.svg','Лауреат конкурса «Лучший судья хозяйственных судов РБ» в 2013 году.')
+                            +egg('./templates/_ares/img/svg/books.svg','Автор более 600 аналитических статей, книг хозяйственно-правовой тематики .')
+                            +egg('./templates/_ares/img/svg/law-book.svg','Научно-исследовательская и законотворческая работа в сфере хозяйственного законодательства.')
+        include ./components/_certificates
+        - var galleryItems = ['./templates/_ares/img/jpg/rev-1.jpg', './templates/_ares/img/jpg/rev-2.jpg', './templates/_ares/img/jpg/rev-3.jpg', './templates/_ares/img/jpg/rev-4.jpg', './templates/_ares/img/jpg/rev-5.jpg', './templates/_ares/img/jpg/rev-6.jpg', './templates/_ares/img/jpg/rev-2.jpg', './templates/_ares/img/jpg/rev-1.jpg'];
+        include ./components/_gallery
+        include ./components/_text
+        

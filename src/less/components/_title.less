@@ -1,11 +1,16 @@
 .title{
 	position: relative;
+	width: 100%;
 
 	&_size{
 
 		&-medium{
 			font-family: @font-family--serif;
 			font-size: 1.5rem;
+		}
+
+		&-large{
+			font-size: 2.25rem;
 		}
 
 		&-extraLarge{
@@ -18,6 +23,10 @@
 
 		&-section{
 			font-size: 3.75rem;
+
+			@media (max-width: 39.975em){
+				font-size: 3rem;
+			}
 		}
 	}
 
