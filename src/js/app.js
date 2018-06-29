@@ -162,7 +162,10 @@ $(document).ready(function() {
 
     $('.text_card p img').each(function() {
         var altText = $(this).attr('alt');
+            srcImg = $(this).attr('src');
         $(this).after("<span>"+ altText +"</span>");
+
+        $(this).wrap("<a href="+ srcImg +" data-fancybox='img'></a>")
     });
 
     if ($('iframe').length){
