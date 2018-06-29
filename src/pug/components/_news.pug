@@ -1,0 +1,10 @@
+.row
+    for news in newsItem
+        .columns.small-12.medium-6.large-4
+            .news_card.align-middle.shadow-light
+                a.news_image(href="#", style=news.img)
+                .news_information
+                    .news_date= news.date
+                    a.news_title(href="#")= news.title
+                    .news_text
+                        p= news.text

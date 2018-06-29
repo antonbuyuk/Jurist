@@ -70,7 +70,8 @@ block content
 					.row(style='height: 100%;')
 						mixin reviewsImg(img)
 							.small-6.medium-4
-								span.background_square.background_image(style='background-image: url(' + img +')')
+								div.overflow.gallery_border
+									a.background_square.gallery_image.background_image(href=img, style='background-image: url(' + img +')', data-fancybox="gallery")
 						+reviewsImg('./templates/_ares/img/jpg/rev-1.jpg')
 						+reviewsImg('./templates/_ares/img/jpg/rev-2.jpg')
 						+reviewsImg('./templates/_ares/img/jpg/rev-3.jpg')

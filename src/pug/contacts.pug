@@ -1,0 +1,64 @@
+extends templates/_layout
+
+block vars
+    - var page = "contacts_page";
+    - var title = "Контакты";
+
+block content
+    section.main
+        .main_item.background_image.background-cover.background-50(style='background-image: url(./templates/_ares/img/jpg/about.jpg)')
+        .main_block
+            .row
+                .column.small-12.large-10.large-offset-1
+                    .title.title_main.title_size-section.title_color-white.text-center
+                        | Контакты
+                    hr.hr.hr-gold.hr-large(noshade)
+    div.wrapper.wrapper_menu
+        section.section
+            .row
+                .columns.small-12.medium-6.large-6
+                    .contacts_area
+                        p ООО "Экономические споры",
+                            br
+                            | Третейский экономический суд при ООО "Экономические споры" **********
+                        .title_contacts.title гОЛОВНОЙ ОФИС:
+                        p 2300023, Республика Беларусь, г. Гродно, ул. Виленская, 1
+                        .carousel_contacts.owl-carousel.owl-theme
+                            .footer_block
+                                p
+                                    span Телефон:
+                                    a(href='tel:+375 (152) 967-004') +375 (152) 967-004
+                                p
+                                    span Факс:
+                                    a(href='tel:+375 (152) 967-004') +375 (152) 967-004
+                                p
+                                    span E-mail:
+                                    a(href='mailto:info@belyavskii.com') info@belyavskii.com
+                            .footer_block
+                                p
+                                    span Телефон:
+                                    a(href='tel:+375 (152) 967-004') +375 (152) 967-004
+                                p
+                                    span Факс:
+                                    a(href='tel:+375 (152) 967-004') +375 (152) 967-004
+                                p
+                                    span E-mail:
+                                    a(href='mailto:info@belyavskii.com') info@belyavskii.com
+                            .footer_block
+                                p
+                                    span Телефон:
+                                    a(href='tel:+375 (152) 967-004') +375 (152) 967-004
+                                p
+                                    span Факс:
+                                    a(href='tel:+375 (152) 967-004') +375 (152) 967-004
+                                p
+                                    span E-mail:
+                                    a(href='mailto:info@belyavskii.com') info@belyavskii.com
+                .columns.small-12.medium-6.large-6
+                    - var formBlock = [{"titleForm":"Остались вопросы?","file":false,"textarea":true,"btnForm":"отправить","formItems":[{"col":"12","inpt":"Имя**"},{"col":"12","inpt":"Название компании*"},{"col":"6","inpt":"Телефон*"},{"col":"6","inpt":"E-mail*"}]}];
+                    include ./components/_form
+    include ./components/_map
+        
+                    
+
+        

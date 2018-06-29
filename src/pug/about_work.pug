@@ -1,0 +1,31 @@
+extends templates/_layout
+
+block vars
+    - var page = "about_page";
+    - var title = "Карьера";
+
+block content
+    section.main
+        .main_item.background_image.background-cover.background-50(style='background-image: url(./templates/_ares/img/jpg/about.jpg)')
+        .main_block
+            .row
+                .column.small-12.large-10.large-offset-1
+                    .title.title_main.title_size-section.title_color-white.text-center
+                        | О нас
+                    hr.hr.hr-gold.hr-large(noshade)
+    div.wrapper.wrapper_menu
+        - var wrapperTabs = ['О нас', 'Карьера', 'Социальная ответственность', 'Отзывы'];
+        include ./components/_tabs
+        - var textItem = ['Предоставление комфортных условий для прохождения бесплатной практики студентам юридических и экономических специальностей ВУЗов с последующим трудоустройством. Приглашаем на работу юристов, имеющих большой опыт судебной работы.','Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. '];
+        include ./components/_text
+        section.section
+            .row
+                .columns.small-12.medium-6.large-6
+                    - var accardionsItems = [{"title": "Юрисконсульт (претензионно-исковая работа)","content": "Требования: опыт работы — 3–6 лет, высшее юр.образование."},{"title": "Стажёр","content": "Обязанности: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "},{"title": "Юрисконсульт","content": "Условия:  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla "}];
+                    include ./components/_accardion
+                .columns.small-12.medium-6.large-6
+                    - var formBlock = [{"titleForm":"Работа у нас","file":true,"textarea":true,"btnForm":"отправить","formItems":[{"col":"12","inpt":"ФИО*"},{"col":"12","inpt":"Должность, на которую претендуете*"},{"col":"6","inpt":"Телефон*"},{"col":"6","inpt":"E-mail*"}]}];
+                    include ./components/_form
+                    
+
+        

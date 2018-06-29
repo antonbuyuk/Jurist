@@ -1,6 +1,12 @@
 $(document).foundation();
 
 $(document).ready(function() {
+    // if($('.accardion_list').length){
+    //     accardionItem();
+    // }
+});
+
+$(document).ready(function() {
     var wrapper = $( ".form_item-upload" ),
         inp = wrapper.find( "input" ),
         btn = wrapper.find( "button" ),
@@ -105,6 +111,63 @@ $(document).ready(function() {
         })
     }
 });
+
+$(document).ready(function() {
+    $('.project-title').each(function() {
+        var title = $(this).height(); 
+            textSelect = $(this).next('.project-text');
+            textBlock = $(textSelect).text();
+            text = textBlock;
+            link = $(this).attr('href');
+            moreText = '[...]'
+            more = '<a href=' + link + '>[...]</a>';
+
+            if (text.length > 270) {
+                text = text.substr(0, 270); 
+                $(textSelect).html( text + more );
+            } else {
+                text = text.substr(0, 270);
+                $(textSelect).html( text );
+            }  
+    });
+
+    $('.news_title').each(function() {
+        var titleSelect = $(this);
+            titleBlock = $(titleSelect).text();
+            title = titleBlock;
+            textSelect = $(this).next('.news_text').children('p');
+            textBlock = $(textSelect).text();
+            text = textBlock;
+            link = $(this).attr('href');
+            moreText = '...'
+            more = '<a href=' + link + '>[...]</a>';
+
+            if (title.length > 57) {
+                title = title.substr(0, 57); 
+                $(titleSelect).html( title + moreText );
+            } else {
+                title = title.substr(0, 57);
+                $(titleSelect).html( title );
+            }  
+
+            if (text.length > 155) {
+                text = text.substr(0, 155); 
+                $(textSelect).html( text + more );
+            } else {
+                text = text.substr(0, 155);
+                $(textSelect).html( text );
+            } 
+    });
+});
+
+
+// Accardion
+function accardionItem() {
+    $('.accardion_header').click(function() {
+        $('.accardion_item').removeClass('is-active');
+        $(this).parents('.accardion_item').addClass('is-active');
+    });
+}
 
 
 if ($('#map').length > 0) {

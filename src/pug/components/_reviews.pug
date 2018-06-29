@@ -1,0 +1,15 @@
+for reviews in reviewsItem
+    .reviews_item.patern
+        .reviews_header
+            .reviews_avatar.hidden-small(style=reviews.avatar)
+            .reviews_information
+                .reviews_name= reviews.name
+                .reviews_status 
+                    p= reviews.status
+                a.reviews_photo(href=reviews.img, data-fancybox="reviews")
+                    i.i-file
+                    span Смотреть оригинал
+        .reviews_content
+            .carousel_reviews_item
+                for item in reviews.content
+                    p= item

@@ -1,0 +1,92 @@
+.reviews{
+
+    &_item{
+        padding: 2.5rem;
+        border: 1px solid #dcdcdc;
+        border-radius: 0;
+        margin-bottom: 1.875rem;
+
+        @media (max-width: 39.975em){
+            padding: 1.5rem 1rem;
+        }
+    }
+
+    &_header{
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+    }
+
+    &_avatar{
+        position: relative;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 7.5rem;
+        background-image: url(../img/svg/avatar.svg);
+        border-radius: 50%;
+        width: 7.5rem;
+        min-width: 7.5rem;
+        height: 7.5rem;
+        margin-right: 1.875rem;
+    }
+
+    &_information{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        border-bottom: 1px solid #dcdcdc;
+        padding-bottom: 1.5rem;
+    }
+
+    &_name{
+        font-size: 1.25rem;
+        color: #666;
+        font-family: @font-family--serif;
+        margin-bottom: 0.625rem;
+    }
+
+    &_photo{
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: #333333;
+        font-size: 0.875rem;
+        line-height: 1.5rem;
+        display: flex;
+        align-items: center;
+
+        i{
+            font-size: 1.25rem;
+            margin-right: 0.5rem;
+        }
+
+        span{
+            border-bottom: 1px dashed #333;
+            transition: 0.2s;
+        }
+
+        &:hover{
+
+            span{
+                border-bottom-color: transparent;
+            }
+        }
+
+        @media (max-width: 39.975em){
+            position: relative;
+            margin-top: 0.625rem;
+        }
+    }
+
+    &_content{
+        position: relative;
+        width: ~'calc(100% - 7.5rem - 1.875rem)';
+        margin-left: auto;
+
+        @media (max-width: 39.975em){
+            width: 100%;
+        }
+    }
+}
