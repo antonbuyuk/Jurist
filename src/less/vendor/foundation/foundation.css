@@ -865,10 +865,9 @@ table {
     border-radius: 0px;
 }
 
-table thead,
 table tbody,
 table tfoot {
-    border: 1px solid #f1f1f1;
+    border: 1px solid #fff;
     background-color: #fefefe;
 }
 
@@ -878,7 +877,7 @@ table caption {
 }
 
 table thead {
-    background: #f8f8f8;
+    background: #e7d9bd;
     color: #0a0a0a;
 }
 
@@ -896,19 +895,27 @@ table thead th,
 table thead td,
 table tfoot th,
 table tfoot td {
-    padding: 0.5rem 0.625rem 0.625rem;
+    padding: 1.375rem 0.625rem;
     font-weight: bold;
     text-align: left;
+    border: 2px solid #fff;
+    color: #666;
 }
 
 table tbody th,
 table tbody td {
-    padding: 0.5rem 0.625rem 0.625rem;
+    padding: 1.375rem .625rem;
+}
+
+table tbody td{
+    font-weight: 300;
+    color: #666;
+    border: 2px solid #fff;
 }
 
 table tbody tr:nth-child(even) {
     border-bottom: 0;
-    background-color: #f1f1f1;
+    background-color: #f6f6f6;
 }
 
 table.unstriped tbody {
@@ -918,7 +925,7 @@ table.unstriped tbody {
 table.unstriped tbody tr {
     border-bottom: 0;
     border-bottom: 1px solid #f1f1f1;
-    background-color: #fefefe;
+    background-color: #f9f9f9;
 }
 
 @media screen and (max-width: 63.9375em) {
@@ -965,7 +972,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 }
 
 .table-scroll table {
-    width: auto;
+    width: 100%;
 }
 
 .row {

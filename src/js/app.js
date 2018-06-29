@@ -112,6 +112,7 @@ $(document).ready(function() {
     }
 });
 
+// Text
 $(document).ready(function() {
     $('.project-title').each(function() {
         var title = $(this).height(); 
@@ -158,6 +159,23 @@ $(document).ready(function() {
                 $(textSelect).html( text );
             } 
     });
+
+    $('.text_card p img').each(function() {
+        var altText = $(this).attr('alt');
+        $(this).after("<span>"+ altText +"</span>");
+    });
+
+    if ($('iframe').length){
+        $('iframe').each(function() {
+            $(this).parents('p').addClass('iframe_parents');
+        });
+    }
+
+    if($('table').length){
+        $('table').each(function(){
+            $(this).wrap("<div class='table-scroll'></div>")
+        });
+    }
 });
 
 
