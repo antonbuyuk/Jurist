@@ -181,6 +181,63 @@ $(document).ready(function() {
     }
 });
 
+// Form 10
+$(document).ready(function() {
+    $('#goSecondStep').click(function(){
+        creatRadio();
+        $(this).parents('.step').css('display','none');
+        $('#secondStep').css('display','block');
+    });
+
+    $('#goThirdStep').click(function(){
+
+        if($('#secondStep .form_item input').val()){
+            creatInput();
+            $(this).parents('.step').css('display','none');
+            $('#thirdStep').css('display','block');
+        }
+    });
+
+    $('.form_10 .back').click(function(){
+        $(this).parents('.step').css('display','none');
+        $(this).parents('.step').prev('.step').css('display','block');
+    });
+
+    $('#secondStep .back').click(function(){
+        $('#formResult1').empty();
+    });
+
+    $('#thirdStep .back').click(function(){
+        $('#formResult2').empty();
+    });
+});
+
+function creatRadio(){
+    $('.form_10 #firstStep .form_group').each(function(){
+        var title = $(this).prev('.title').text();
+            input = $(this).find('input');
+        var inputData;
+
+        $(input).each(function(){
+            if($(this).prop("checked")){
+                var inputData = $(this).data('text');
+                $('#formResult1').append(
+                    '<div class="form_item"><div class="row"><div class="columns small-12 medium-12 large-3"><div class="title title_size-small title-semibold title_color-dark">'+ title +'</div></div><div class="columns small-12 medium-12 large-9"><p>' + inputData +'</p></div></div></div>');
+            }            
+        });
+        
+    });
+}
+
+function creatInput(){
+    $('.form_10 #secondStep .form_item').each(function(){
+        var title = $(this).children('input,textarea').attr('placeholder');
+            input = $(this).children('input,textarea').val();
+        
+        $('#formResult2').append(
+            '<div class="form_item"><div class="row"><div class="columns small-12 medium-12 large-3"><div class="title title_size-small title-semibold title_color-dark">'+ title +'</div></div><div class="columns small-12 medium-12 large-9"><p>' + input +'</p></div></div></div>');
+    });
+}
 
 // Accardion
 function accardionItem() {

@@ -27,6 +27,7 @@
                     }
                 }
             }
+
             span {
                 position: relative;
                 display: flex;
@@ -35,6 +36,7 @@
                 border: 1px solid #ba9241;
                 border-radius: 0;
                 width: 1rem;
+                min-width: 1rem;
                 height: 1rem;
                 background-color: #fff;
                 &:after {
@@ -48,6 +50,13 @@
                     height: 100%;
                     opacity: 0;
                 }
+            }
+
+            label{
+                font-weight: 300;
+                font-size: 0.875rem;
+                margin-left: 0.625rem;
+                color: #333;
             }
         }
 
@@ -79,6 +88,7 @@
                 border: 1px solid #ba9241;
                 border-radius: 0;
                 width: 1rem;
+                min-width: 1rem;
                 height: 1rem;
                 background-color: #fff;
                 border-radius: 50%;
@@ -91,6 +101,13 @@
                     border-radius: 50%;
                     background-color: #947434
                 }
+            }
+
+            label{
+                font-weight: 300;
+                font-size: 0.875rem;
+                margin-left: 0.625rem;
+                color: #333;
             }
         }
 
@@ -203,10 +220,18 @@
             font-size: 0.75rem;
             font-style: italic;
             font-family: @font-family;
-            min-height: 6.25rem;
+            min-height: 5.625rem;
 
             &::placeholder{
                 color: #999;
+            }
+
+            &:focus{
+                border-color: @main;
+            }
+
+            &.is-invalid-input{
+                border-color: #f24841;
             }
         }
 
@@ -236,4 +261,39 @@
             padding: 2rem 2rem;
         }
     }
+
+    &_group{
+        margin-bottom: 2rem;
+    }
+}
+
+#formResult1{
+    margin-bottom: 3rem;
+}
+
+#formResult2{
+    margin-bottom: 3rem;
+}
+
+.form_10-text{
+    margin-bottom: 2rem;
+}
+
+.step{
+    display: none;
+
+    .form_item{
+
+        label{
+
+            img{
+                max-height: 2.5rem;
+                margin-right: 2rem;
+            }
+        }
+    }
+}
+
+#firstStep{
+    display: block;
 }

@@ -1,0 +1,28 @@
+extends templates/_layout
+
+block vars
+    - var page = "about_page";
+    - var title = "Иск за 10 минут";
+
+block content
+    section.main
+        .main_item.background_image.background-cover.background-50(style='background-image: url(./templates/_ares/img/jpg/about.jpg)')
+        .main_block
+            .row
+                .column.small-12.large-10.large-offset-1
+                    .title.title_main.title_size-section.title_color-white.text-center
+                        | Экономические споры
+                    hr.hr.hr-gold.hr-large(noshade)
+    div.wrapper.wrapper_menu
+        - var wrapperTabs = ['Что мы предлагаем', 'Цены', 'Иск за 10 минут'];
+        include ./components/_tabs
+        - var textItem = ['Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'];
+        include ./components/_text
+        section.section
+            .row
+                .columns.small-12
+                    - var formBlock = [{"titleForm":"Иск за 10 минут","btnGroup":"Составить заявление","btnForm":"отправить","btn":"Оплатить","formGroups":[{"titleGroup":"Форма заявления:","formRadio":[{"idRadio":"radio1","nameRadio":"group1","textRadio":"Претензия"},{"idRadio":"radio2","nameRadio":"group1","textRadio":"Иск"},{"idRadio":"radio3","nameRadio":"group1","textRadio":"Приказное заявление"},{"idRadio":"radio4","nameRadio":"group1","textRadio":"Заявление о совершении исполнительной надписи нотариуса"}]},{"titleGroup":"Вид договора:","formRadio":[{"idRadio":"radio5","nameRadio":"group2","textRadio":"Аренда"},{"idRadio":"radio6","nameRadio":"group2","textRadio":"Поставка"},{"idRadio":"radio7","nameRadio":"group2","textRadio":"Подряд"},{"idRadio":"radio8","nameRadio":"group2","textRadio":"Перевозка"}]},{"titleGroup":"Законодательство:","formRadio":[{"idRadio":"radio9","nameRadio":"group3","textRadio":"Российское"},{"idRadio":"radio10","nameRadio":"group3","textRadio":"Белорусское"}]}],"formItems":[{"inpt":"Фамилия*","nameInpt":"secondName"},{"inpt":"Имя*","nameInpt":"firstName"},{"inpt":"Отчество*","nameInpt":"patronymic"},{"inpt":"e-mail*","nameInpt":"email"}]}];
+                    include ./components/_form_10
+                    
+
+        
