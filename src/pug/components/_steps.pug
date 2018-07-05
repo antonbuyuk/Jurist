@@ -1,0 +1,10 @@
+.row
+    for step in stepItems
+        .columns.small-12.medium-6.large-3
+            .steps_item
+                .steps_icon
+                    img(src=step.icon, alt=step.num)
+                .steps_container
+                    .steps_num= step.num
+                    hr.hr.hr-gold(noshade)
+                    p= step.text

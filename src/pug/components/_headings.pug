@@ -1,0 +1,10 @@
+.row
+    .columns.small-12
+        section.headings_section.section.patern
+            for heading in headingsItems
+                .title.title_size-large.title_color-dark.title_main.text-center= heading.title
+                hr.hr.hr-gold.hr-medium(noshade)
+                ul.headings_list
+                    for item in heading.links
+                        li.headings_item
+                            a(href="#")= item

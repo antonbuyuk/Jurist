@@ -1,0 +1,49 @@
+extends templates/_layout
+
+block vars
+    - var page = "about_page";
+    - var title = "Полезная информация - карточка";
+
+block content
+    section.main
+        .main_item.background_image.background-cover.background-50(style='background-image: url(./templates/_ares/img/jpg/about.jpg)')
+        .main_block
+            .row
+                .column.small-12.large-10.large-offset-1
+                    .title.title_main.title_size-section.title_color-white.text-center
+                        | Полезная информация
+                    hr.hr.hr-gold.hr-large(noshade)
+    div.wrapper.wrapper_menu
+        - var wrapperTabs = ['Наша практика', 'Полезная информация'];
+        include ./components/_tabs
+        section.helpfull-articless_block.text.text_card.section
+            .row.align-middle
+                .columns.small-12.medium-7.large-9
+                    .title.title_size-large.title_color-dark.title_main.no_margin Мировое соглашение не может содержать условия ответственности за его неисполнение
+                .columns.small-12.medium-5.large-3
+                    .form_item.form_item-search.no_margin
+                        input(type="search", name="", placeholder="Поиск по статьям", required)
+                        span.form-error 
+                            i.i-error
+                        button(type='submit')
+                            i.i-search
+                .columns.small-12
+                    .news_date С.Ч. Белявский, по состоянию на 18.01.2017
+        section.section.helpfull-articless_block
+            .row
+                .columns.small-12
+                    h3 Аннотация
+                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae.
+        section.section.helpfull-articless_block
+            .row
+                .columns.small-12
+                    h3 Полный текст
+            .row
+                .columns.small-12
+                    -var filesItem = [{"ico":"doc","name":"Lorem ipsum dolor sit amet, consectetur adipisicing elit.docx"},{"ico":"pdf","name":"Lorem ipsum dolor sit amet, consectetur adipisicing elit.docx"}];
+                    include ./components/_files
+        section.section
+            .row.align-middle
+                .columns.small-12.medium-6
+                    include ./components/_back

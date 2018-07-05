@@ -1,0 +1,50 @@
+.files{
+
+    &_list{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &_item{
+        display: inline-flex;
+        width: auto;
+        align-items: center;;
+        max-width: 16.75rem;
+        margin-right: 2rem;
+
+        @media (max-width: 63.975em){
+            margin-bottom: 1rem;
+        }
+
+        p{
+            transition: @transition-time;
+        }
+
+        &:hover{
+
+            p{
+                color: @main--hover;
+            }
+        }
+    }
+
+    &_img{
+        position: relative;
+        display: block;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 2.8175rem;
+        min-width: 2.8175rem;
+        height: 3.1875rem;
+        margin-right: 1.125rem;
+
+        &-doc{
+            background-image: url('../img/svg/doc.svg');
+        }
+
+        &-pdf{
+            background-image: url('../img/svg/pdf.svg');
+        }
+    }
+}

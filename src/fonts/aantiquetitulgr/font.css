@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'AAntiqueTitulGr';
+  src: url('AAntiqueTitulGr.woff') format('woff'),
+       url('AAntiqueTitulGr.ttf') format('truetype'),
+       url('AAntiqueTitulGr.svg#AAntiqueTitulGr') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'aantiquetitulgr';
+  src: url('aantiquetitulgr.eot');
+  src: url('aantiquetitulgr.woff2') format('woff2'),
+       url('aantiquetitulgr.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+

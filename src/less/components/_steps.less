@@ -1,0 +1,37 @@
+.steps{
+
+    &_item{
+        display: flex;
+        align-items: flex-start;
+
+        @media (max-width: 63.975em){
+            margin-bottom: 2rem;
+        }
+    }
+
+    &_icon{
+        display: flex;
+        align-items: flex-start;
+        margin-right: 1.25rem;
+        
+        img{
+            max-width: 3.125rem;
+        }
+    }
+
+    &_container{
+
+        .hr{
+            border-width: 0;
+            border-top-width: 1px;
+            margin: 1rem 0;
+        }
+    }
+
+    &_num{
+        font-size: 1.25rem;
+        line-height: 1.4;
+        color: #333;
+        font-family: @font-family--serif;
+    }
+}

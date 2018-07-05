@@ -3,6 +3,55 @@
         position: relative;
         margin-bottom: 0.625rem;
 
+        input{
+            border-radius: 0;
+            display: block;
+            padding: .782rem .875rem;
+            border: 1px solid #dcdcdc;
+            font-size: 0.75rem;
+            font-style: italic;
+            font-family: @font-family;
+            width: 100%;
+
+            &::placeholder{
+                color: #999;
+            }
+
+            &:focus{
+                border-color: @main;
+            }
+
+            &.is-invalid-input{
+                border-color: #f24841;
+            }
+            
+        }
+        
+        textarea{
+            width: 100%;
+            max-width: 100%;
+            border-radius: 0;
+            display: block;
+            padding: .782rem .875rem;
+            border: 1px solid #dcdcdc;
+            font-size: 0.75rem;
+            font-style: italic;
+            font-family: @font-family;
+            min-height: 5.625rem;
+
+            &::placeholder{
+                color: #999;
+            }
+
+            &:focus{
+                border-color: @main;
+            }
+
+            &.is-invalid-input{
+                border-color: #f24841;
+            }
+        }
+
         &:last-child{
             // margin-bottom: 0;
         }
@@ -165,6 +214,10 @@
         }
 
         &-search{
+
+            input{
+                padding: 1.125rem .875rem;
+            }
             
             button{
                 position: absolute;
@@ -183,55 +236,6 @@
                         color: @main--hover;
                     }
                 }
-            }
-        }
-
-        input{
-            border-radius: 0;
-            display: block;
-            padding: .782rem .875rem;
-            border: 1px solid #dcdcdc;
-            font-size: 0.75rem;
-            font-style: italic;
-            font-family: @font-family;
-            width: 100%;
-
-            &::placeholder{
-                color: #999;
-            }
-
-            &:focus{
-                border-color: @main;
-            }
-
-            &.is-invalid-input{
-                border-color: #f24841;
-            }
-            
-        }
-        
-        textarea{
-            width: 100%;
-            max-width: 100%;
-            border-radius: 0;
-            display: block;
-            padding: .782rem .875rem;
-            border: 1px solid #dcdcdc;
-            font-size: 0.75rem;
-            font-style: italic;
-            font-family: @font-family;
-            min-height: 5.625rem;
-
-            &::placeholder{
-                color: #999;
-            }
-
-            &:focus{
-                border-color: @main;
-            }
-
-            &.is-invalid-input{
-                border-color: #f24841;
             }
         }
 

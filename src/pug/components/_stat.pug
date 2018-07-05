@@ -1,0 +1,7 @@
+.row.small-up-1.medium-up-3.large-up-5
+    for item in statItems
+        .columns
+            .stat_item
+                .stat_num.text-center= item.num
+                hr.hr.hr-gold.hr-medium(noshade)
+                .steps_num.text-center= item.title

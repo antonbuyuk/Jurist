@@ -1,0 +1,46 @@
+extends templates/_layout
+
+block vars
+    - var page = "about_page";
+    - var title = "Услуги - Что мы предлагаем";
+
+block content
+    section.main
+        .main_item.background_image.background-cover.background-50(style='background-image: url(./templates/_ares/img/jpg/about.jpg)')
+        .main_block
+            .row
+                .column.small-12.large-10.large-offset-1
+                    .title.title_main.title_size-section.title_color-white.text-center
+                        | Экономические споры
+                    hr.hr.hr-gold.hr-large(noshade)
+    div.wrapper.wrapper_menu
+        section.text.text_card.section
+            .row
+                .columns.small-12
+                    .title.title_size-large.title_color-dark.title_main Миссия
+                    p Наша миссия – использование накопленного опыта для наиболее эффективного урегулирования экономических споров отечественных и зарубежных бизнес-субъектов в рамках существующей государственной и частной (третейской) судебной системы, а также во внесудебных переговорах. 
+                    p Фундаментальными основами успешного урегулирования нами бизнес-споров наших клиентов являются:
+                    ul
+                        li Уникальный профессиональный опыт, репутация, порядочность
+                        li Наивысшая квалификация и ее непрерывное совершенствование
+                        li Индивидуальный подход к каждому спору
+                        li Конфиденциальность и доверие
+                        li Максимально сжатые сроки
+                    p Мы находим эффективные решения запутанных ситуаций там, где другие их даже не ищут.
+        section.text.text_card.section
+            .row
+                .columns.small-12
+                    .title.title_size-large.title_color-dark.title_main Порядок работы
+            -var stepItems = [{"icon":"./templates/_ares/img/svg/heads.svg","num":"Шаг 1","text":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "},{"icon":"./templates/_ares/img/svg/file_search.svg","num":"Шаг 2","text":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "},{"icon":"./templates/_ares/img/svg/strategy.svg","num":"Шаг 3","text":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "},{"icon":"./templates/_ares/img/svg/trophy.svg","num":"Шаг 4","text":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "}];
+            include ./components/_steps
+        section.stat.section
+            -var statItems = [{"num":"1236","title":"Какое-то достижение"},{"num":">578","title":"Часов консультаций адвокатов"},{"num":"458","title":"Клиентов"},{"num":"1236","title":"Проведённых дел в суде"},{"num":"1236","title":"Какое-то достижение"}];
+            include ./components/_stat
+        section.text.text_card.section
+            .row
+                .columns.small-12
+                    p Нашими рабочими языками являются 
+                        b русский, белорусский, английский, польский и литовский
+                        |. Это позволяет нам общаться с клиентом без участия переводчика.
+                    p
+                        b "Качественно" - это про нас, "дорого" - да, пожалуй, но никак не "долго".
