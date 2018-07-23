@@ -55,22 +55,31 @@
                     #formResult1.columns.small-12
                     #formResult2.columns.small-12
                     .columns.small-12
-                        .form_item
-                            .row
+                        .form_item.mb-2
+                            .row.align-middle
                                 .columns.small-12.medium-12.large-3
-                                    .title.title_size-small.title-semibold.title_color-dark Способ оплаты:
+                                    .title.title_size-small.title-semibold.title_color-dark.mb-0 Способ оплаты:
                                 .columns.small-12.medium-12.large-9
-                                    .form_group.flex
-                                        .form_item.form_item-radiobox.flex.align-middle
+                                    .form_group.flex.mb-0
+                                        .form_item.form_item-radiobox.flex.align-middle.mb-0
                                             input(type="radio", name='payment', id="webpay", required, checked)
                                             span
                                             label(for="webpay")
                                                 img(src="./templates/_ares/img/png/webpay.png", alt="webpay")
-                                        .form_item.form_item-radiobox.flex.align-middle.align-middle
+                                        .form_item.form_item-radiobox.flex.align-middle.align-middle.mb-0
                                             input(type="radio", name='payment', id="erip", required)
                                             span
                                             label(for="erip")
                                                 img(src="./templates/_ares/img/png/erip.png", alt="erip")
+                        .form_item
+                            .row
+                                .column.small-12
+                                    .form_group.flex.mb-0
+                                        .form_item.form_item-checkbox.flex.align-middle
+                                            input(type="checkbox", name='payment', id="webpay", required)
+                                            span
+                                            label(for="webpay") Пожтверрждаю заполнение личных данных
+
                 .row.align-middle
                     .columns.small-12.medium-6.large-3
                         include ./_back.pug

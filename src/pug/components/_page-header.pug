@@ -1,9 +1,10 @@
-header.header.header-transparent.header-absolute.header-fixed
+header.header.header-transparent.header-absolute
     .row.row-large.align-middle
         .columns.small-6.medium-6.large-2
             .logo.logo-white.header_logo
                 a(href="/")
                     img(src="./templates/_ares/img/logo/logo-inverse.svg", alt="")
+                    img(src="./templates/_ares/img/logo/logo.svg", alt="", class='logo-fixed')
         .columns.hidden-small.hidden-medium.large-7
             - var menuServices = ['Экономические споры', 'Третейский суд', 'Медиация'];
 
@@ -43,7 +44,7 @@ header.header.header-transparent.header-absolute.header-fixed
                                 input(type="search",placeholder="Поиск по статьям...")
             .contacts.header_contacts
                 a.contacts_phone(href='tel:+375 (152) 967-004') +375 (152) 967-004
-                a.contacts_callback.hidden-small(href='#')
+                a.contacts_callback.hidden-small
                     i.i-icon
                     span Заказать звонок
             ul.language.header_language.hidden-small.dropdown(data-dropdown-menu, data-closing-time='0', data-autoclose='false',data-alignment='right')

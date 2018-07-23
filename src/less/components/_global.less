@@ -40,6 +40,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	min-width: 320px;
+	opacity: 0;
 }
 
 a {
@@ -185,6 +186,10 @@ p {
 		@media (max-width: 39.975em){
 			margin: 1.625rem auto;
 		}
+	}
+
+	&-left{
+		margin-left: 0;
 	}
 
 	&-gold{
@@ -398,6 +403,7 @@ p {
 		color: #fff;
 		font-weight: 300;
 		margin-top: 0.25rem;
+		cursor: pointer;
 
 		&:hover{
 			color: @main--hover;
@@ -488,7 +494,7 @@ p {
 			background-image: url(../img/svg/hammer.svg);
 			width: 40.75rem;
 			height: 22.75rem;
-			transform: translateX(-30%) translateY(-10%);
+			transform: translateX(-30%) translateY(5%);
 		}
 	}
 }
@@ -621,7 +627,16 @@ p {
 	#map{
 		height: 100%;
 	}
+
+	&_content{
+		padding: 1rem 0;
+
+		.footer_block{
+			position: relative;
+		}
+	}
 }
+
 
 .helpfull-articless{
 
@@ -646,4 +661,97 @@ p {
 			margin-bottom: 0;
 		}
 	}
+}
+
+.error{
+
+	&_page{
+
+		&_logo{
+
+			img{
+				max-width: 20.75rem;
+			}
+
+			@media (max-width: 39.975em){
+				display: flex;
+				justify-content: center;
+			}
+		}
+
+		&_phone{
+			color: #333;
+			font-size: 1.5rem;
+			font-weight: 600;
+			margin-left: auto;
+
+			@media (max-width: 39.975em){
+				margin: 2rem auto 0;
+			}
+		}
+	}
+}
+
+#error_page{
+
+	.header{
+		padding: 4rem 0;
+	}
+}
+
+.fixed_btn{
+	position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+	background-color: @main;
+	z-index: 100;
+	width: 3.75rem;
+    height: 3.75rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: @transition-time;
+
+	a{
+		color: #fff;
+		font-size: 2.5rem;
+	}
+
+	&:hover{
+		background-color: @main--hover;
+	}
+}
+
+
+.box_img {
+    display: inline-block;
+    position: relative;
+    top: 0;
+    width: 15em;
+    height: 15em;
+    margin: 0 .7em;
+}
+
+.icons--dasharray-anim .icon {
+    stroke: #ba9241;
+    stroke-width: 2;
+    stroke-dasharray: 500 0;
+    stroke-dashoffset: 1000;
+    &:hover {
+        animation: dasharray 3s infinite alternate;
+    }
+}
+
+@keyframes dasharray {
+    0% {
+        stroke-dasharray: 300 0;
+    }
+    100% {
+        stroke-dasharray: 0 300;
+    }
+    0% {
+        stroke-dasharray: 300 0;
+    }
 }

@@ -19,6 +19,97 @@
         width: 100%;
     }
 
+    &-fixed{
+        position: fixed;
+        @media(min-width: 64em){
+            
+            background-color: #fff;
+            border-bottom-width: 3px;
+            border-bottom-color: #00006b;
+
+            .logo{
+
+                img{
+                    display: none;
+
+                    &.logo-fixed{
+                        display: block;
+                    }
+                }
+            }
+
+            > .row{
+
+                > .columns{
+
+                    &:nth-child(2){
+                        flex: 0 0 50%;
+                        max-width: 50%;
+                    }
+
+                    &:nth-child(3){
+                        flex: 0 0 33.33333%;
+                        max-width: 33.33333%;
+                    }
+                }
+            }
+
+            .menu-white .menu_item a{
+                color: #333;
+            }
+
+            .menu_btn{
+                display: none;
+            }
+
+            .menu_item a{
+                color: #333;
+                padding: 2.5rem 0;
+            }
+
+            .language .menu_item>a{
+                padding: 1.75rem 0;
+            }
+
+            .language-select{
+                border-color: #333;
+            }
+
+            .arrow-down{
+                border-top-color: #333;
+            }
+            
+            .contacts_phone{
+                color: #333;
+                justify-content: center;
+            }
+
+            .contacts_callback{
+                color: #333;
+                border: 1px solid #333;
+                text-align: center;
+                margin: 0;
+                padding: 0.657rem 0rem;
+                justify-content: center;
+
+                i{
+                    display: none;
+                }
+
+                span{
+                    margin: 0;
+                }
+            }
+
+            .header_contacts{
+                flex-direction: row;
+                width: 100%;
+                align-items: center;
+                border-left: 1px solid #333;
+            }
+        }
+    }
+
     &_logo{
         @media (max-width: 39.975em){
             padding: 0.905rem 0;
@@ -27,6 +118,11 @@
         a{
 
             img{
+                display: block;
+
+                &.logo-fixed{
+                    display: none;
+                }
 
                 @media (max-width: 63.975em){
                     max-height: 3rem;

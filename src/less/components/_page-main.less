@@ -152,9 +152,26 @@
         justify-content: center;
         align-items: center;
         margin-bottom: 2rem;
+        transition: .2s;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit:1;
 
         img{
             
+        }
+
+        object{
+            width: 100%;
+        }
+
+        svg{
+            width: 100%;
+            stroke: #ba9241;
+            stroke-width: 2;
+            stroke-dasharray: 500 0;
+            stroke-dashoffset: 1000;
         }
 
         @media (min-width: 40em) and (max-width: 63.975em){
@@ -162,6 +179,37 @@
             text-align: left;
             margin-right: 2rem;
         }
+    }
+
+    &-small{
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        padding: 2.25rem 1rem;
+
+        .box_img{
+            margin-bottom: 0;
+            width: 3rem;
+            min-width: 3rem;
+            height: 3rem;
+            margin-right: 1.25rem;
+        }
+
+        .title{
+            font-size: 1.25rem;
+        }
+    }
+
+    &:hover {
+
+        .box_img{
+
+            svg{
+                animation: dasharray 3s infinite alternate;
+            }
+        }
+        
     }
 }
 
@@ -200,5 +248,12 @@
         min-width: 3.125rem;
         height: 3.125rem;
         margin-right: 1.875rem;
+    }
+}
+
+.mt{
+
+    &-5{
+        margin-top: 5rem;
     }
 }

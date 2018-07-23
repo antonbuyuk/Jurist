@@ -7,14 +7,14 @@ footer.footer
                     li.menu_item
                         a(href='#')= val
                 li.menu_btn.hidden-small
-                        a(href='#')
-                            | скачать брошюру
+                    a(href='#')
+                        | скачать брошюру
         .columns.small-12.medium-4.large-3.large-offset-1
             .footer_block
                 .title_footer ГОЛОВНОЙ ОФИС:
                 p
                     | 220000, Республика Беларусь, г. Гродно, ул. Советская, 100
-            
+
             .carousel_contacts.owl-carousel.owl-theme
                 .footer_block
                     p
@@ -78,3 +78,36 @@ footer.footer
                 | ООО «Экономические споры", Лицензия на право осуществления деятельности по оказанию юридических услуг № *****/****, выдана на основании решения Министерства юстиции Республики Беларусь от **.**.2018. №***.   
         .columns.small-12.medium-5.large-4.large-offset-1
             span.footer_link.align-right © ОАО Экономические споры
+.fixed_btn
+    a(title='Бесплатная консультация')
+        i.i-stateman
+
+.overlay
+    .modal.patern
+        a.modal_close
+            i.i-close
+        .modal_content.form_area
+            .title.title_size-medium.text-center Бесплатная консультация
+            hr.hr.hr-mini.hr-gold(noshade)
+            form.form(action="#", data-abide, novalidate)
+                .form_item
+                    input(type="text", name="", placeholder="ФИО*", required)
+                    span.form-error 
+                        i.i-error
+                .form_item
+                    input(type="text", name="", placeholder="Название компании*", required)
+                    span.form-error 
+                        i.i-error
+                .form_item
+                    input(type="text", name="", placeholder="Телефон*", required)
+                    span.form-error 
+                        i.i-error
+                .form_item
+                    input(type="text", name="", placeholder="e-mail*", required)
+                    span.form-error 
+                        i.i-error
+                .form_item
+                    textarea(name="", placeholder="Сообщение")
+                .form_item
+                    button.btn.btn_border.btn_color-yellow.btn_size-medium(type="submit")
+                        span получить консультацию

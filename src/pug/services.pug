@@ -18,15 +18,14 @@ block content
             .row
                 mixin box(img,title,text)
                     .columns.small-12.large-4
-                        .box.flex.align-middle.text-center.shadow-light
-                            .box_img
-                                img(src=img, alt=title)
+                        a(href='#').box.flex.align-middle.text-center.shadow-light
+                            .box_img=img
                             div.box_section
                                 .title.title_size-medium.title_color-dark=title
                                 hr.hr.hr-gold.hr-mini(noshade)
                                 p=text
-                +box('./templates/_ares/img/svg/recovery.svg','Экономические споры','Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Incidunt ut labore et dolore magnam aliquam quaerat voluptatem.')
-                +box('./templates/_ares/img/svg/arbitration.svg','Третейский суд','Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Incidunt ut labore et dolore magnam aliquam quaerat voluptatem.')
-                +box('./templates/_ares/img/svg/mediation.svg','Медиация','Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Incidunt ut labore et dolore magnam aliquam quaerat voluptatem.')
+                +box('','Экономические споры','Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Incidunt ut labore et dolore magnam aliquam quaerat voluptatem.')
+                +box('','Третейский суд','Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Incidunt ut labore et dolore magnam aliquam quaerat voluptatem.')
+                +box('','Медиация','Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Incidunt ut labore et dolore magnam aliquam quaerat voluptatem.')
         - var textItem = ['Предоставление комфортных условий для прохождения бесплатной практики студентам юридических и экономических специальностей ВУЗов с последующим трудоустройством. Приглашаем на работу юристов, имеющих большой опыт судебной работы.','Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. '];
         include ./components/_text

@@ -5,6 +5,9 @@ $(document).ready(function() {
     //     accardionItem();
     // }
 });
+$(document).scroll(function() {
+    $(document).scrollTop() > 800 ? $("header").addClass("header-fixed") : $("header").removeClass("header-fixed")
+});
 
 $(document).ready(function() {
     var wrapper = $( ".form_item-upload" ),
@@ -38,6 +41,16 @@ $(document).ready(function() {
         }else
             lbl.text( file_name );
     }).change();
+});
+
+//Modal
+$(document).ready(function(){
+    $('.fixed_btn,.contacts_callback').click(function(){
+        $('.overlay').addClass('is-active');
+    })
+    $('.modal_close').click(function(){
+        $('.overlay').removeClass('is-active');
+    })
 });
 
 // Carousel
@@ -247,64 +260,143 @@ function accardionItem() {
     });
 }
 
-
 if ($('#map').length > 0) {
+    var markersData = [
+        {
+            lat: 56.246205,     // Широта
+            lng: 43.8964165,    // Долгота
+            img: "../templates/_ares/img/jpg/office.jpg",
+            phone: "Телефон 1", // Произвольное название, которое будем выводить в информационном окне
+            fax: "факс 1",
+            email:"Адрес 1"   // Адрес, который также будем выводить в информационном окне
+        },
+        {
+            lat: 56.2763807,
+            lng: 43.94534,
+            img: "../templates/_ares/img/jpg/office.jpg",
+            phone: "Телефон 2",
+            fax: "факс 2",
+            email:"Адрес 2"
+        },
+        {
+            lat: 56.3144715,
+            lng: 43.9922894,
+            img: "../templates/_ares/img/jpg/office.jpg",
+            phone: "Телефон 3",
+            fax: "факс 3",
+            email:"Адрес 3"
+        }
+    ];
+    
+    
+    var map, infoWindow;
+     
     function initMap() {
-        var lt = + $('#map').attr('data-lt');
-            lg = + $('#map').attr('data-lg');
-            gps = {lat: lt, lng: lg};
-            text = $('#map').attr('data-text');
-
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 12,
-          styles: [
-            {elementType: 'geometry', stylers: [{color: '#efefef'}]},
-            {elementType: 'labels.text.stroke', stylers: [{color: '#fff'}]},
-            {elementType: 'labels.text.fill', stylers: [{color: '#767676'}]},
-            {
-              featureType: 'road',
-              elementType: 'geometry',
-              stylers: [{color: '#bababa'}]
-            },
-            {
-              featureType: 'road',
-              elementType: 'geometry.stroke',
-              stylers: [{color: '#bababa'}]
-            },
-            {
-              featureType: 'road',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#003a57'}]
-            },
-            {
-              featureType: 'road.highway',
-              elementType: 'geometry',
-              stylers: [{color: '#bababa'}]
-            },
-            {
-              featureType: 'road.highway',
-              elementType: 'geometry.stroke',
-              stylers: [{color: '#fff'}]
-            },
-            {
-              featureType: 'road.highway',
-              elementType: 'geometry',
-              stylers: [{color: '#bababa'}]
-            },
-            {
-              featureType: 'water',
-              elementType: 'geometry',
-              stylers: [{color: '#dadada'}]
-            }
-          ]
+        var centerLatLng = new google.maps.LatLng(56.2928515, 43.7866641);
+        var mapOptions = {
+            center: centerLatLng,
+            zoom: 15,
+            styles: [
+                {elementType: 'geometry', stylers: [{color: '#efefef'}]},
+                {elementType: 'labels.text.stroke', stylers: [{color: '#fff'}]},
+                {elementType: 'labels.text.fill', stylers: [{color: '#767676'}]},
+                {
+                  featureType: 'road',
+                  elementType: 'geometry',
+                  stylers: [{color: '#bababa'}]
+                },
+                {
+                  featureType: 'road',
+                  elementType: 'geometry.stroke',
+                  stylers: [{color: '#bababa'}]
+                },
+                {
+                  featureType: 'road',
+                  elementType: 'labels.text.fill',
+                  stylers: [{color: '#003a57'}]
+                },
+                {
+                  featureType: 'road.highway',
+                  elementType: 'geometry',
+                  stylers: [{color: '#bababa'}]
+                },
+                {
+                  featureType: 'road.highway',
+                  elementType: 'geometry.stroke',
+                  stylers: [{color: '#fff'}]
+                },
+                {
+                  featureType: 'road.highway',
+                  elementType: 'geometry',
+                  stylers: [{color: '#bababa'}]
+                },
+                {
+                  featureType: 'water',
+                  elementType: 'geometry',
+                  stylers: [{color: '#dadada'}]
+                }
+              ]
+        };
+     
+        map = new google.maps.Map(document.getElementById("map"), mapOptions);
+     
+        infoWindow = new google.maps.InfoWindow();
+     
+        google.maps.event.addListener(map, "click", function() {
+            infoWindow.close();
         });
-
+     
+        // Определяем границы видимой области карты в соответствии с положением маркеров
+        var bounds = new google.maps.LatLngBounds();
+     
+        for (var i = 0; i < markersData.length; i++){
+     
+            var latLng = new google.maps.LatLng(markersData[i].lat, markersData[i].lng);
+            var img = markersData[i].img;
+            var phone = markersData[i].phone;
+            var fax = markersData[i].fax;
+            var email = markersData[i].email;
+     
+            addMarker(latLng, img, phone, email, fax);
+     
+            // Расширяем границы нашей видимой области, добавив координаты нашего текущего маркера
+            bounds.extend(latLng);
+        }
+     
+        // Автоматически масштабируем карту так, чтобы все маркеры были в видимой области карты
+        map.fitBounds(bounds);
+     
+    }
+    
+    function addMarker(latLng, img, phone, email, fax) {
         var marker = new google.maps.Marker({
-            position: {lat: -34.397, lng: 150.644},
-            icon: './templates/_ares/img/svg/placeholder.svg',
+            position: latLng,
             map: map,
-            title: 'tex'
+            icon: './templates/_ares/img/svg/placeholder.svg',
+            title: phone
+        });
+     
+        google.maps.event.addListener(marker, "click", function() {
+     
+            var contentString = '<div class="map_content">' +
+                                    '<div class="row">'+
+                                        '<div class="columns small-6">'+
+                                            '<div class="image-border"><img src="'+ img +'"></div>'+
+                                        '</div>'+
+                                        '<div class="columns small-6">'+
+                                            '<div class="title title_color-dark title_size-small title_main">ГОЛОВНОЙ ОФИС:</div>'+
+                                            '<div class="footer_block"><p><span>Телефон:</span><a href="tel:' + phone + '" class="title_color-dark">' + phone + '</a></p><p><span>Факс:</span><a href="tel:+375 (152) 967-004" class="title_color-dark">+375 (152) 967-004</a></p><p><span>E-mail:</span><a href="mailto:'+ email +'" class="title_color-dark">'+ email +'</a></p></div>'+
+                                        '</div>'+
+                                    '</div>'+
+                                '</div>';
+     
+            infoWindow.setContent(contentString);
+            infoWindow.open(map, marker);
         });
     }
 };
+
+
+$(window).ready(function () {
+    $('body').css('opacity', '1');
+ })
